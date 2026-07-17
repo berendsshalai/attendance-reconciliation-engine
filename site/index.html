@@ -13,6 +13,13 @@
         <p class="eyebrow">Sha-Lai Berends Systems Lab</p>
         <h1>Attendance Reconciliation Engine</h1>
         <p class="lede">A local-first tool for turning shift rosters and clock events into a clear exception queue, daily summary, and audit trail. It uses fictional examples and is built as clean-room public software.</p>
+        <div class="identity-panel" aria-label="Public project identity">
+          <span class="glass-logo" aria-hidden="true">SB</span>
+          <div>
+            <strong>Sha-Lai Berends Systems Lab</strong>
+            <span>Business automation and data operations, shown through code, documentation, and privacy-safe public examples.</span>
+          </div>
+        </div>
         <div class="button-row">
           <a class="button primary" href="https://github.com/berendsshalai/attendance-reconciliation-engine">View repository</a>
           <a class="button" href="./socials/">Social reference</a>
@@ -30,6 +37,8 @@
             <div class="card"><span class="metric">02</span><h3>Present but unrostered</h3><p>A clock event exists where there was no planned shift for that worker, site, and date.</p></div>
             <div class="card"><span class="metric">03</span><h3>Late or early</h3><p>Arrival and departure differences are measured against configurable grace windows.</p></div>
             <div class="card"><span class="metric">04</span><h3>Needs review</h3><p>Unmatched or incomplete clock records are surfaced instead of being hidden.</p></div>
+            <div class="card"><span class="metric">05</span><h3>Coverage gap</h3><p>A planned work window needs more people than the roster provides.</p></div>
+            <div class="card"><span class="metric">06</span><h3>Roster overlap</h3><p>The same worker is planned in two places at the same time.</p></div>
           </div>
         </div>
       </section>
@@ -39,6 +48,7 @@
           <h2>Workflow</h2>
           <div class="flow">
             <span>Fictional shifts</span>
+            <span>Fictional coverage rules</span>
             <span>Fictional clock events</span>
             <span>Configurable rules</span>
             <span>Exception queue</span>
@@ -53,6 +63,7 @@
           <table>
             <tr><th>Layer</th><th>Evidence</th></tr>
             <tr><td>Core</td><td>Python reconciliation engine with event consumption, nonnegative timing deltas, JSON/CSV readers, and deterministic tests.</td></tr>
+            <tr><td>Roster</td><td>Coverage gap, overlapping planned shift, long shift, duplicate identifier, and missing field review.</td></tr>
             <tr><td>CLI</td><td>Runs local reconciliation and writes a JSON report without external services.</td></tr>
             <tr><td>MCP</td><td>Local stdio JSON-RPC server with <code>initialize</code>, <code>tools/list</code>, and <code>tools/call</code>.</td></tr>
             <tr><td>Privacy</td><td>Privacy gates, fictional sample workers/sites, and clean-room documentation.</td></tr>
@@ -67,6 +78,7 @@
           <pre><code>python -m pip install -e .
 python -m attendance_reconciliation.synthetic data/demo
 python -m attendance_reconciliation.cli reconcile --shifts data/demo/shifts.csv --attendance data/demo/attendance.csv --output out/report.json
+python -m attendance_reconciliation.cli review-roster --shifts data/demo/shifts.csv --coverage data/demo/coverage.csv --output out/roster-review.json
 python -m pytest tests</code></pre>
           <p>The sample files contain fictional workers and fictional sites only. They are designed to explain the workflow without exposing private operations, API tokens, or actual financial data.</p>
         </div>
