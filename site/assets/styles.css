@@ -1,0 +1,157 @@
+:root {
+  color: #172126;
+  background: #f8f7f3;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #205f63;
+}
+
+header,
+section,
+footer {
+  padding: 42px 20px;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 76vh;
+  display: grid;
+  align-items: center;
+  border-bottom: 1px solid #d8d4c8;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #2f6f73;
+  font-size: 0.78rem;
+}
+
+h1 {
+  max-width: 920px;
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 16px;
+}
+
+h3 {
+  margin: 0 0 8px;
+}
+
+.lede {
+  max-width: 780px;
+  font-size: 1.18rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card,
+.panel {
+  border: 1px solid #d8d4c8;
+  border-radius: 8px;
+  background: #fffefb;
+  padding: 18px;
+}
+
+.metric {
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.flow span {
+  border: 1px solid #becfcf;
+  background: #edf5f5;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 700;
+}
+
+code {
+  background: #ece8dc;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+pre {
+  overflow: auto;
+  background: #172126;
+  color: #f8f7f3;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button {
+  border: 1px solid #172126;
+  border-radius: 8px;
+  color: #172126;
+  text-decoration: none;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.button.primary {
+  background: #172126;
+  color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fffefb;
+}
+
+th,
+td {
+  border: 1px solid #d8d4c8;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #edf5f5;
+}
+
+footer {
+  border-top: 1px solid #d8d4c8;
+}
