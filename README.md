@@ -28,8 +28,10 @@ python -m attendance_reconciliation.cli review-roster --shifts data/demo/shifts.
 
 ## Public Pages
 
-- Project page: `https://berendsshalai.github.io/attendance-reconciliation-engine/`
-- Social reference: `https://berendsshalai.github.io/attendance-reconciliation-engine/socials/`
+- [Project page](https://berendsshalai.github.io/attendance-reconciliation-engine/)
+- [Check My Socials](https://berendsshalai.github.io/attendance-reconciliation-engine/socials/)
+
+The social page is part of the deployed project site and connects this repository to the creator's verified public profiles and portfolio.
 
 ## Non-Technical Explanation
 
